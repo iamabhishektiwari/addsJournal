@@ -1,0 +1,121 @@
+
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="{% static "fb/SimpleSlider.css" %}"  rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static "css/st_arr.css" %}" >
+
+<style type="text/css">
+td,th {
+font-family: Verdana, "Lucida Grande";
+}
+</style>
+<link href="{% static "fb/SimpleSlider.css" %}"  rel="stylesheet" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static "fb/Am2_SimpleSlider.js" %}"  type="text/javascript"></script>
+
+
+    
+
+          <div class="container-fluid">
+        <!-- Start: Header -->
+        <div class="row hero-header" id="home">
+          <div class="col-md-7">
+            <img src="img/meetup-logo.png" class="logo">
+            <h1>Welcome</h1>
+            <h3><br><br></h3>
+            <h4>Post adds and promote your buisness for free!</h4>
+            <a href="/discover" class="btn btn-lg btn-red"> Discover <span class="ti-arrow-right"></span></a>
+
+          </div>
+          <div class="col-md-5 hidden-xs">
+            <img src="img/rocket.png" class="rocket animated bounce">
+          </div>
+        </div>
+        <!-- End: Header -->
+      </div>
+
+
+          <div class="container">
+        <!-- Start: Desc -->
+
+
+
+          <section class="main">
+                <a class="arrow-wrap" href="#add_content">
+                  <span class="arrow"></span>
+              <!--<span class="hint">scroll</span>-->
+                </a>
+  
+          </section>
+
+
+
+
+
+        <div class="row me-row content-ct">
+          <h2 class="row-title">Cheak out some Cool Adds</h2>
+          
+        </div>
+      </div>
+
+<style type="text/css">
+  #add_content{
+    padding-top: 25px;
+  }
+</style>
+
+
+
+
+
+
+    <div id="add_content">
+    <div id="productContainer" class="product-productpage-container">
+    
+        <div id="productContent">
+
+          
+            <div class="product-gallery">
+
+            {% for x in 'xxxxxxxxxxxxxxx'%}
+            {% for document in documents %}
+                <div class="gallery-img">
+                    <a>
+                        <img src="{{ document.docfile_url}}"  alt="img" style="width:304px;height:228px;">
+                    </a>
+                    
+                    <div data-desc="{{document.Add_brand}} :  {{document.Add_about}}">             </div>
+                    {{document.Add_brand}}  
+                </div>
+            {% endfor %}
+            {% endfor %}
+
+          
+            </div>
+            </div>
+        </div>
+        
+       
+</div>
+<div class="clear"></div>
+
+     <script type="text/javascript">
+         $('.gallery-img').Am2_SimpleSlider();
+       </script>
+ 
+
+
+
+{% endblock %}
+
+
+
+      

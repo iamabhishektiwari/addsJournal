@@ -1,0 +1,14 @@
+{% block content %}
+
+<form action="/add/create/" method="post">{% csrf_token %}
+<ul>
+	{{ form.as_ul }}
+</ul>
+<input type="submit" name="submit" value="Create Add">
+
+
+</form>
+
+
+
+{% endblock %}

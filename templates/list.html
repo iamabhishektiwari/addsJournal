@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+                
+<link rel="stylesheet" href="{% static "add_submission_form/css/reset.min.css" %}" >
+<link rel="stylesheet" href="{% static "add_submission_form/css/style.css" %}" >
+
+
+                <!-- Upload form. Note enctype attribute! -->
+        <form action="{% url "list" %}" method="post" enctype="multipart/form-data" id="msform">{% csrf_token %}
+                 <br><br>
+                <fieldset>
+                        <h2 class="fs-title">Post your Add</h2>
+                        <h3 class="fs-subtitle"> Publicity for free!</h3>
+
+
+
+                        <p>{{ form.non_field_errors }}</p>
+                        
+                        <p>
+                                {{ form.docfile.errors }}
+                                
+                                {{ form }}
+                        </p>
+                        <p><input class="submit action-button" type="submit" value="Upload" /></p>
+                        </fieldset>
+                </form>
+{% endblock %}

@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static "add_submission_form/css/reset.min.css" %}" >
+<link rel="stylesheet" href="{% static "add_submission_form/css/style.css" %}" >
+
+{% if form.errors %}
+<p class="error">Sorry </p>
+{% endif %}
+
+<form action="/acc/auth/" method="post" id="msform" >{% csrf_token %}
+
+	<br><br>
+    <fieldset>
+        <h2 class="fs-title">Sign up</h2>
+        <h3 class="fs-subtitle">Let’s have a new beginning. Sign up for new you</h3>
+		<label for="username">User name:</label>
+		<input type="text" name="username" value="" id="username">
+		<label for="password">Password</label>
+		<input type="password" name="password" value="" id="password">
+		<input class="submit action-button" type="submit" name="" value="Login">
+        
+        <p>Dont't have an account? <a href="/acc/register">Sign up</a></p>
+	</fieldset>
+
+
+</form>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

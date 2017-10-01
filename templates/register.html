@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Register{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static "add_submission_form/css/reset.min.css" %}" >
+<link rel="stylesheet" href="{% static "add_submission_form/css/style.css" %}" >
+
+
+{% if form.errors %}
+<p>{{ form.error }} </p>
+{% endif %}
+
+
+<form action="/acc/register/" method="post" id="msform">{% csrf_token %}
+        
+        <!-- fieldsets -->
+        
+         <br><br>
+         <fieldset>
+          <h2 class="fs-title">Sign up</h2>
+          <h3 class="fs-subtitle">Let’s have a new beginning. Sign up for new you</h3>
+          <label> Username  {{form.username}} </label>
+          <label> Email  {{form.email}} </label>
+          <label> Password  {{form.password1}} </label>
+          <label> Password Verification  {{form.password2}} </label>
+
+
+          <input class="submit action-button" type="submit" name="" value="Register">
+        
+        <p>Already have an account? <a href="/acc/login">Sign in</a></p>
+        </fieldset>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

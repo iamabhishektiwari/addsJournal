@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% block title %}PrePost{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+                
+<link rel="stylesheet" href="{% static "add_submission_form/css/reset.min.css" %}" >
+<link rel="stylesheet" href="{% static "add_submission_form/css/style.css" %}" >
+
+
+                <!-- Upload form. Note enctype attribute! -->
+        <form action="{% url "list" %}" method="post" enctype="multipart/form-data" id="msform">{% csrf_token %}
+                 <br><br>
+                <fieldset>
+                        <h2 class="fs-title"> <a href="/acc/register"> Signup </a> and Post as humans</h2>
+                        <p><a href="/acc/register"><input class="submit action-button" value="Signup / Login" /></a></p>
+
+                        <br><br><br><br><br>
+
+                        <h2 class="fs-title"> <a href="/adds/list/"> Proceed </a> and Post as a Ghost</h2>
+                        <p><a href="/adds/list/"> <input class="submit action-button" value=" Proceed" /></a></p>
+
+                    
+                        </fieldset>
+                </form>
+{% endblock %}
