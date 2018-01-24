@@ -1,4 +1,4 @@
-# Project Title
+# addsJournal
 
 Dynamic website, publishing adds of different companies.
 
